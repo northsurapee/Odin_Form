@@ -48,7 +48,7 @@ table {
 /* Font face */
 @font-face {
     font-family: 'Norse-Bold';
-    src: url('Norse-Bold.otf') format('opentype'); 
+    src: url('/resources/Norse-Bold.otf') format('opentype'); 
     font-weight: bold;
     font-style: normal;
 }
@@ -67,7 +67,7 @@ body {
 
 /* Left */
 .left {
-    background-image: url('/background.jpg'); 
+    background-image: url('/resources/background.jpg'); 
     background-size: cover; /*the browser scales the background image to cover the entire container*/
     background-position: center center;
     
