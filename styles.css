@@ -1,3 +1,5 @@
+/* Suggestion : Use 'rem' for font-size and 'px' for everything else. */
+
 /* Reset CSS */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -53,27 +55,29 @@ table {
 
 /* Whole Page */
 body {
+    /*
+    Always use 'min-height: 100vh;'
+    If the content inside the element requires more height than the viewport height, the element will expand to accommodate the content. (if just height: 100vh, element will disapear)
+    If the content is less than the viewport height, the element will take up the entire viewport height.
+    */
+    min-height: 100vh; 
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 /* Left */
-div.left {
-    height: 100vh;
+.left {
     background-image: url('/background.jpg'); 
     background-size: cover; /*the browser scales the background image to cover the entire container*/
-    width: 60vw;
-
+    background-position: center center;
+    
+    flex: 3; /* 3:5 */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-div.logo_container {
+.banner {
     margin-top: 10rem;
     height: 11rem;
     display: flex;
@@ -90,8 +94,6 @@ div.logo_container {
     color: white;
     font-size: 5.5rem;
     font-family: 'Norse-Bold', sans-serif;
-    padding: 0px;
-    margin: 0px;
 }
 
 p.credit {
@@ -106,7 +108,7 @@ a:visited {
 
 /* Right */
 .right {
-    height: 100vh;
+    flex: 5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -122,6 +124,7 @@ a:visited {
     font-size: 1.25rem;
     margin: 2rem 0rem;
     font-weight: 500;
+    max-width: 80%
 }
 
 em {
@@ -146,25 +149,52 @@ form {
     box-shadow: 10px 3px 5px lightgray;
 }
 
-.input-container {
+.input-row {
     display: flex;
+    /* 
+    For wrap flex-box
+    gap : not work because, some part will have unequal gap
+    
+    Before wrap
+    x {gap2} x
+    {gap1}
+    y {gap2} y
+    {gap1}
+
+    After wrap (WRONG)
+    x
+    {gap2}
+    x
+    {gap1}
+    y
+    {gap2}
+    y
+
+    column-gap, row-gap : work! because, when flex-item is wrapped it will have just row-gap apply to it.
+
+    Before wrap
+    x{column-gap}x
+    {row-gap}
+    y{column-gap}y
+    {row-gap}
+     
+    After wrap (CORRECT)
+    x
+    {row-gap}
+    x
+    {row-gap}
+    y
+    {row-gap}
+    y
+    {row-gap}
+
+    */
+    column-gap: 3rem;
+    row-gap: 1rem;
     flex-wrap: wrap;
-    gap: 4rem;
 }
 
-.left_form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.right_form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-div.input_bar {
+.input-container {
     display: flex;
     flex-direction: column;
     font-size: 0.7rem;
@@ -197,7 +227,7 @@ button {
 
 }
 
-.right p{
+.right p {
     margin-left: 2rem;
 }
 
@@ -207,6 +237,7 @@ strong {
     cursor: pointer;
 }
 
+/* input when we focus on it! */
 input:focus {
     border: 1px solid green;
     box-shadow: 0 0 5px rgb(0,0,0,.3);
@@ -217,3 +248,4 @@ input:focus {
     height: 1rem;
     color: red;
 }
+
