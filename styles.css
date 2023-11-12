@@ -43,11 +43,6 @@ table {
 	border-spacing: 0;
 }
 
-/* Custom Properties */
-:root {
-
-}
-
 /* Font face */
 @font-face {
     font-family: 'Norse-Bold';
@@ -56,6 +51,7 @@ table {
     font-style: normal;
 }
 
+/* Whole Page */
 body {
     display: flex;
     justify-content: center;
@@ -132,21 +128,27 @@ em {
     font-style: italic;
 }
 
-.form_container {
-    padding: 3rem 2rem;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    box-shadow: 10px 3px 5px lightgray;
-}
-
 h2 {
     font-size: 1.5rem;
 }
 
 form {
     display: flex;
+    flex-direction: column;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+    background-color: white;
+    gap: 1rem;
+    box-shadow: 10px 3px 5px lightgray;
+}
+
+.input-container {
+    display: flex;
+    flex-wrap: wrap;
     gap: 4rem;
 }
 
@@ -203,4 +205,15 @@ strong {
     color: #596D48;
     font-weight: bold;
     cursor: pointer;
+}
+
+input:focus {
+    border: 1px solid green;
+    box-shadow: 0 0 5px rgb(0,0,0,.3);
+    outline: none;
+}
+
+.error {
+    height: 1rem;
+    color: red;
 }
