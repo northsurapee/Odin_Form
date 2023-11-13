@@ -65,7 +65,7 @@ body {
 
 /* Left */
 .left {
-    background-image: url('/resources/background.jpg'); 
+    background-image: url('resources/background.jpg'); 
     background-size: cover; /*the browser scales the background image to cover the entire container*/
     background-position: center center;
     
