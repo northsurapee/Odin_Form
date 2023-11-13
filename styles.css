@@ -246,3 +246,16 @@ input:focus {
     color: red;
 }
 
+/* Responsive */
+button,
+a,
+strong {
+    transition: transform 0.05s ease-in-out;
+}
+
+button:hover,
+a:hover,
+strong:hover {
+    transform: scale(1.05); /* Increase the size on hover */
+    opacity: 0.8;
+}
