@@ -47,10 +47,8 @@ table {
 
 /* Font face */
 @font-face {
-    font-family: 'Norse-Bold';
-    src: url('/resources/Norse-Bold.otf') format('opentype'); 
-    font-weight: bold;
-    font-style: normal;
+    font-family: "Norse Bold";
+    src: url("resources/Norse-Bold.otf");
 }
 
 /* Whole Page */
@@ -62,7 +60,7 @@ body {
     */
     min-height: 100vh; 
     display: flex;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Roboto';
 }
 
 /* Left */
@@ -112,7 +110,6 @@ a:visited {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
     background-color: #f9fafb;;
 }
 
